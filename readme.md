@@ -14,28 +14,6 @@ Connection to Launched EC2 and taking the folloeing actions;
 1. upload python file
 2. run Linux commands and also update packages before anyother further installations
 
-connection {
-    type        = "ssh"
-    user        = "ubuntu"  # Replace with the appropriate username for your EC2 instance
-    private_key = file("~/.ssh/id_rsa")  # Replace with the path to your private key
-    host        = self.public_ip
-  }
-
-  # File provisioner to copy a file from local to the remote EC2 instance
-  
-  provisioner "file" {
-    source      = "app.py"  
-    destination = "/home/ubuntu/app.py"  
-
-  provisioner "remote-exec" {
-    inline = [
-      "echo 'Hello from the remote instance'",
-      "sudo apt update -y",  # Update package lists (for ubuntu)
-      "sudo apt-get install -y python3-pip",  # Example package installation
-      "cd /home/ubuntu",
-      "sudo pip3 install flask",
-      "sudo python3 app.py &",
-    ]
-  }
+<img width="658" alt="Screenshot 2024-10-10 at 5 38 28 AM" src="https://github.com/user-attachments/assets/d3a1f20c-f522-46a3-a985-dac795aa258e">
 
   
