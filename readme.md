@@ -22,6 +22,7 @@ connection {
   }
 
   # File provisioner to copy a file from local to the remote EC2 instance
+  
   provisioner "file" {
     source      = "app.py"  
     destination = "/home/ubuntu/app.py"  
@@ -37,3 +38,4 @@ connection {
     ]
   }
 
+  
