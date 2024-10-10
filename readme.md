@@ -20,5 +20,13 @@ Steps:
 <img width="658" alt="Screenshot 2024-10-10 at 5 38 28 AM" src="https://github.com/user-attachments/assets/d3a1f20c-f522-46a3-a985-dac795aa258e">
 
 
+**SECURITY**:
+
+The project’s Terraform state file is stored in an S3 bucket, with DynamoDB used for state locking. This setup helps prevent accidental deletions and reduces the risk of concurrent access, ensuring only one operation can modify the state file at a time.
+
+Special Thanks to Abhisheek Veeramalla
+
+
+
 
   
