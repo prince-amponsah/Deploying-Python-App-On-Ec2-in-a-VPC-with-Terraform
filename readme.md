@@ -1,19 +1,24 @@
-In this project I'm laveraging the use of Iac - Terraform to deploy a simple python flask app unto an EC2 within a VPC.
+In this project, I use Infrastructure as Code (IaC) with Terraform to deploy a simple Python Flask app on an EC2 instance within a VPC.
+VPC Setup:
 
-Create a Vpc, Connec and Internet to the VPC to allow internet to flow in and also setup the following;
-1. main route table
-2. public subnet
-3. Seecurity groups. 
-Our Ec2 will be in a public subnet which is connected to the main route table which is also connected to IGW to allow internet into the VPC.
+    Create a VPC and connect it to the internet.
+    Configure the following components:
+       1. Main route table
+       2. Public subnet
+       3. Security groups
 
-**Terraform Provisioners**:
-I utilized the use of Terraform Provisioners to remote ssh  into the instance and upload the python file and also run all installations with "Remote Exec".
-This gives me the opportunity to run all commands remotely using a locally generates ssh public key.
+The EC2 instance is placed in the public subnet, which is linked to the main route table and an Internet Gateway (IGW) to allow internet access.
 
-Connection to Launched EC2 and taking the folloeing actions;
-1. upload python file
-2. run Linux commands and also update packages before anyother further installations
+**Terraform Provisioners:**
+I leveraged Terraform provisioners to remotely SSH into the EC2 instance. Using the remote-exec provisioner, I uploaded the Python Flask app and performed the necessary installations. This was achieved using a locally generated SSH public key.
+Steps:
+
+    1. Connect to the EC2 instance within the VPC.
+    2. Upload the Python file.
+    3. Execute Linux commands to update packages, install Flask, and launch the app on the EC2 instance.
 
 <img width="658" alt="Screenshot 2024-10-10 at 5 38 28 AM" src="https://github.com/user-attachments/assets/d3a1f20c-f522-46a3-a985-dac795aa258e">
+
+
 
   
